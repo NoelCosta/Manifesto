@@ -7,13 +7,28 @@ window.addEventListener('load', function() {
     var btn_hideTerminal = document.getElementById('btn_hideTerminal');
     var code;
 
-    fetch('../index.html', {
-        cache: 'no-cache'
-      })
-      .then(response => response.text())
-      .then(data => {
-          code = data;
-      });
+    // fetch('../index.html', {
+    //     cache: 'no-cache'
+    //   })
+    //   .then(response => response.text())
+    //   .then(data => {
+    //       code = data;
+    //   });
+
+    // create a new XMLHttpRequest object
+    var xhr = new XMLHttpRequest();
+
+    // specify the details of the GET request
+    xhr.open('GET', '../index.html', true);
+
+    // set a callback function to be executed when the request's state changes
+    xhr.onreadystatechange = function() {
+        // check if the request has completed successfully
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // if successful, assign the response text to a variable named "code"
+            code = xhr.responseText;
+        }
+    };
 
     /* --- Normal Mode --- */
     document.getElementById("btn_hideTerminal").addEventListener('click', function(event) {
