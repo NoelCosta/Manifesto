@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
     var btn_hideTerminal = document.getElementById('btn_hideTerminal');
     var code;
 
-    fetch('../index.html', {
+    fetch('index.html', {
         cache: 'no-cache'
       })
       .then(response => response.text())
