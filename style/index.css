@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    background: rgb(235,51,73);
+    background: -moz-linear-gradient(90deg, rgba(235,51,73,1) 0%, rgba(244,92,67,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(235,51,73,1) 0%, rgba(244,92,67,1) 100%);
+    background: linear-gradient(90deg, rgba(235,51,73,1) 0%, rgba(244,92,67,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eb3349",endColorstr="#f45c43",GradientType=1);
+}
+
+header {
+    background-color: #333;
+    color: #fafafa;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: xx-large;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size:x-large;
+}
+
+.terminal-mode {
+    background: #001f00 !important;
+    color: #00ff00;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.terminal-mode p{
+    white-space: normal;
+    word-wrap: break-word;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+#btn_hideTerminal{
+    font-weight: bolder;
+    font-style: italic;
+}
+#btn_hideTerminal:hover{
+    cursor: pointer;
+    color: white;
+
+}
+
+#btn_showTerminal {
+    background-color: #333;
+    border: none;
+    bottom: 20px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 100%;
+    
+    font-family: Lexend Deca, Arial, sans-serif;
+    font-size:x-large;
+}
+
+#btn_showTerminal:hover {
+    background-color: #ff6b51;
+}
+
+/* Manifesto List Card */
+
+#manifesto-listContainer {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#manifesto-list{
+    list-style: none;
+    padding: 10px;
+
+    color: black;
+    background-color: #f8f8f8;
+    font-family: Lexend Deca, Arial, sans-serif;
+    margin: 0;
+}
+
+#manifesto-list strong{
+    color: rgb(221, 114, 0);
+}
+
+@media (max-width: 300px){
+    #manifesto-listContainer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) and (min-width: 300px) {
+    #manifesto-listContainer {
+        width: 80%;
+    }
+}
+
+@media (max-width: 950px) and (min-width: 450px) {
+    #manifesto-listContainer {
+        width: 800px;
+    }
+}
+
+@media (min-width: 950px){
+    #manifesto-listContainer {
+        width: 830px;
+    }
+}
