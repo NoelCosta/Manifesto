@@ -7,6 +7,16 @@ window.addEventListener('load', function() {
     var btn_hideTerminal = document.getElementById('btn_hideTerminal');
     var code;
 
+    // git
+    fetch('https://raw.githubusercontent.com/noelcosta/Manifesto/main/index.html', {
+        cache: 'no-cache'
+      })
+      .then(response => response.text())
+      .then(data => {
+          code = data;
+      });
+
+    // local
     fetch('../index.html', {
         cache: 'no-cache'
       })
@@ -19,7 +29,7 @@ window.addEventListener('load', function() {
     // var xhr = new XMLHttpRequest();
 
     // // specify the details of the GET request
-    // xhr.open('GET', '../index.html', true);
+    // xhr.open('GET', 'index.html', true);
 
     // // set a callback function to be executed when the request's state changes
     // xhr.onreadystatechange = function() {
@@ -30,6 +40,7 @@ window.addEventListener('load', function() {
     //     }
     // };
 
+      
     /* --- Normal Mode --- */
     document.getElementById("btn_hideTerminal").addEventListener('click', function(event) {
         html.classList.remove('terminal-mode');
