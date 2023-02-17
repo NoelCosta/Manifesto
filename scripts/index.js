@@ -16,14 +16,14 @@ window.addEventListener('load', function() {
           code = data;
       });
 
-    // local
-    fetch('../index.html', {
-        cache: 'no-cache'
-      })
-      .then(response => response.text())
-      .then(data => {
-          code = data;
-      });
+    // // local
+    // fetch('../index.html', {
+    //     cache: 'no-cache'
+    //   })
+    //   .then(response => response.text())
+    //   .then(data => {
+    //       code = data;
+    //   });
 
     // // create a new XMLHttpRequest object
     // var xhr = new XMLHttpRequest();
@@ -95,4 +95,44 @@ window.addEventListener('load', function() {
             }
         }, 100);
     });
+
+    /* Carousel Code */
+    // Get all the letter elements
+var letters = document.getElementsByClassName('letter');
+
+// Add a click event listener to each letter element
+for (var i = 0; i < letters.length; i++) {
+  letters[i].addEventListener('click', function(event) {
+    // Remove the active class from all letters
+    for (var j = 0; j < letters.length; j++) {
+      letters[j].classList.remove('active');
+    }
+
+    // Add the active class to the clicked letter
+    event.target.classList.add('active');
+
+    var index = parseInt(event.target.getAttribute('data-card-index'));
+    var cards = document.getElementsByClassName('card');
+    
+    // Loop through all card elements and set their display property
+    for (var j = 0; j < cards.length; j++) {
+      if (j === index) {
+        cards[j].style.display = 'block';
+      } else {
+        cards[j].style.display = 'none';
+      }
+    }
+  });
+}
+
+const card = document.querySelector('.card');
+
+card.addEventListener('mousemove', (e) => {
+  const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+  const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+  card.style.transform = `perspective(800px) rotateY(${xAxis}deg) rotateX(${-yAxis}deg)`;
+});
+
+
+
 });
