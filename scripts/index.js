@@ -2,7 +2,7 @@
 window.addEventListener('load', function() {
     var html = document.getElementsByTagName('html')[0];
     var body = document.body;
-    var manifestoOriginal = document.getElementById("manifesto-container");
+    var manifestoContainer = document.getElementById("manifesto-listContainer_0");
     var terminal = document.getElementById('terminal');
     var btn_hideTerminal = document.getElementById('btn_hideTerminal');
     var code;
@@ -45,7 +45,7 @@ window.addEventListener('load', function() {
     document.getElementById("btn_hideTerminal").addEventListener('click', function(event) {
         html.classList.remove('terminal-mode');
         body.classList.remove('terminal-mode');
-        manifestoOriginal.classList.remove('hidden');
+        manifestoContainer.classList.remove('hidden');
         btn_hideTerminal.parentElement.classList.add("hidden");
         terminal.innerHTML = '';
     });
@@ -53,7 +53,7 @@ window.addEventListener('load', function() {
     /* --- Terminal Mode --- */
     document.getElementById("btn_showTerminal").addEventListener('click', function(event) {
         // Hide Original Manifesto
-        manifestoOriginal.classList.add('hidden');
+        manifestoContainer.classList.add('hidden');
         
         // Add Terminal Style
         html.classList.add('terminal-mode');
@@ -105,11 +105,11 @@ window.addEventListener('load', function() {
     letters[i].addEventListener('click', function(event) {
         // Remove the active class from all letters
         for (var j = 0; j < letters.length; j++) {
-        letters[j].classList.remove('active');
+            letters[j].classList.remove('letterActive');
         }
 
         // Add the active class to the clicked letter
-        event.target.classList.add('active');
+        event.target.classList.add('letterActive');
 
         var index = parseInt(event.target.getAttribute('data-card-index'));
         var cards = document.getElementsByClassName('card');

@@ -1,10 +1,9 @@
+/* Variables */
 :root {
     --CardPadding: 20px;
-  }
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap');
-
+/* Common */
 *{
     padding: 0;
     margin: 0;
@@ -25,11 +24,6 @@ header {
     text-align: center;
 }
 
-h1 {
-    font-size: xx-large;
-    margin: 0;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -37,9 +31,9 @@ body {
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
-    font-size:x-large;
 }
 
+/* Terminal Mode */
 .terminal-mode {
     background: #001f00 !important;
     color: #00ff00;
@@ -49,7 +43,6 @@ body {
 .terminal-mode p{
     white-space: normal;
     word-wrap: break-word;
-    
 }
 
 .hidden {
@@ -74,26 +67,12 @@ body {
     cursor: pointer;
     padding: var(--CardPadding);
     width: 100%;
-    
     font-family: Lexend Deca, Arial, sans-serif;
-    font-size:x-large;
-
-
+    font-weight: 400;
 }
 
 #btn_showTerminal:hover {
     background-color: #ff6b51;
-}
-
-/* Manifesto List Card */
-
-#manifesto-listContainer {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .manifesto-list{
@@ -104,58 +83,34 @@ body {
     background-color: #f8f8f8;
     font-family: Lexend Deca, Arial, sans-serif;
     margin: 0;
-}
 
-.manifesto-list strong{
-    color: rgb(221, 114, 0);
-}
-
-@media (max-width: 300px){
-    #manifesto-listContainer {
-        width: 100%;
-    }
-}
-
-@media (max-width: 450px) and (min-width: 300px) {
-    #manifesto-listContainer {
-        width: 80%;
-    }
-}
-
-@media (max-width: 950px) and (min-width: 450px) {
-    #manifesto-listContainer {
-        width: 800px;
-    }
-}
-
-@media (min-width: 950px){
-    #manifesto-listContainer {
-        width: 830px;
-    }
-}
-
-/* Carousel */
-#carousel {
     overflow-x: hidden;
     height: auto;
     margin-left: auto;
     margin-right: auto;
 }
 
-#manifesto-container{
-    margin-top: 150px;
-}
+#manifesto-listContainer_2{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-#manifesto-listContainer{
+    margin-left: auto;
+    margin-right: auto;
+    
     -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
     transition: all 0.2s ease-in-out;
 }
 
+#manifesto-listContainer_2:hover {
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+}
 
 .card p{
     color: #333;
-    font-family: Lexend Deca, Arial, sans-serif;
+    font-family: 'Lexend Deca', sans-serif, Arial;
 }
 
 .card, #letters {
@@ -170,6 +125,7 @@ body {
 }
   
 .letter {
+    font-family: 'Lexend Deca', 'calibri', 'Merriweather', 'Times New Roman', Times, serif;
     display: inline-block;
     font-size: 50px;
     font-weight: bold;
@@ -177,23 +133,23 @@ body {
     cursor: pointer;
 }
 
-#carousel .card{
-    padding-top: var(--CardPadding);
-}
-
 .letter:hover {
     color: #ff6b51;
 }
-.space {
+
+#CardsContainer{
+    padding-top: var(--CardPadding);
+}
+
+#letterSpace {
     width: 20px;
-    display: inline-block;
-  }
+}
   
-.active {
+.letterActive {
     color: #666;
 }
 
-.carousel-container {
+#manifesto-list {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -202,12 +158,225 @@ body {
     padding: var(--CardPadding);
 }
 
-#manifesto-listContainer:hover {
-    transform: scale(1.1);
-    transition: all 0.2s ease-in-out;
+#manifesto-list strong{
+    color: rgb(221, 114, 0);
+}
+
+#manifesto-listContainer_1{
+    overflow-x: hidden;
 }
 
 
+/* Height Responsiveness */
+@media (max-height: 360px) {
+    #manifesto-listContainer_1{
+        height: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
   
-  
-  
+@media (min-height: 400px) {
+    #manifesto-listContainer_1{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+}
+
+@media (max-height: 400px) {
+    #manifesto-listContainer_2:hover {
+        transform: scale(1);
+    }
+}
+
+/* Width Responsiveness */
+
+
+@media (max-width: 700px) {
+    
+
+    #manifesto-listContainer_2:hover {
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 700px) {
+    #letterSpace{
+        display: inline-block;
+    }
+}
+
+@media (max-width: 360px) {
+    .card p, .terminal-mode p {
+    font-size: 16px;
+    }
+
+    .letter {
+        font-size: 36px;
+    }
+
+    #btn_showTerminal{
+        font-size: 14px;
+    }
+
+    #manifesto-listContainer_2 {
+        width: 66%;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+    .card p, .terminal-mode p {
+        font-size: 18px;
+    }
+
+    .letter {
+        font-size: 38px;
+    }
+
+    #btn_showTerminal{
+        font-size: 16px;
+    }
+
+    #manifesto-listContainer_2 {
+        width: 100%;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 576px) {
+    .card p, .terminal-mode p {
+        font-size: 20px;
+    }
+
+    .letter {
+        font-size: 40px;
+    }
+
+    #btn_showTerminal {
+        font-size: 18px;
+    }
+
+    #manifesto-listContainer_2 {
+        width: 100%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .card p, .terminal-mode p {
+        font-size: 22px;
+    }
+
+    .letter {
+        font-size: 42px;
+    }
+
+    #btn_showTerminal {
+        font-size: 20px;
+    }
+
+    #manifesto-listContainer_2 {
+        width: 66%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .card p, .terminal-mode p {
+        font-size: 24px;
+    }
+
+    .letter {
+        font-size: 44px;
+    }
+
+    #btn_showTerminal {
+        font-size: 22px;
+    }
+
+    #manifesto-listContainer_2 {
+        width: 66%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .card p, .terminal-mode p {
+        font-size: 26px;
+    }
+
+    .letter {
+        font-size: 46px;
+    }
+
+    #btn_showTerminal {
+        font-size: 24px;
+    }
+
+    #manifesto-listContainer_2 {
+        width: 66%;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+    .card p, .terminal-mode p {
+        font-size: 28px;
+    }
+
+    .letter {
+        font-size: 48px;
+    }
+
+    #btn_showTerminal {
+        font-size: 26px;
+    }
+
+    #manifesto-listContainer_2 {
+        width: 66%;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 2560px) {
+    .card p, .terminal-mode p {
+        font-size: 34px;
+    }
+
+    .letter {
+        font-size: 54px;
+    }
+
+    #btn_showTerminal {
+        font-size: 32px;
+    }
+
+    #manifesto-listContainer_2 {
+        width: 66%;
+    }
+
+    #manifesto-listContainer_2:hover {
+        transform: scale(1.4);
+    }
+}
+
+@media (min-width: 2560px) {
+    .card p, .terminal-mode p {
+        font-size: 38px;
+    }
+
+    .letter {
+        font-size: 58px;
+    }
+
+    #btn_showTerminal {
+        font-size: 36px;
+    }
+
+    #manifesto-listContainer_2 {
+        max-width: 1500px;
+    }
+
+    #manifesto-listContainer_2:hover {
+        transform: scale(1.4);
+    }
+}
